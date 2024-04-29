@@ -1,91 +1,87 @@
 import React from "react";
 
-const GuardianInput = ({ GuardianNumber, onChange, index }) => {
+const GuardianInput = ({ guardian, onChange, index }) => {
   return (
     <>
-      <label
-        htmlFor={`GuardianName-${GuardianNumber.id}`}
-        className='flex flex-col '>
-        <p className='my-2'>{`Guardian ${GuardianNumber.id} Name`} :</p>
+      <label htmlFor={`GuardianName-${guardian.id}`} className='flex flex-col '>
+        <p className='my-2'>{`Guardian ${guardian.id} Name`} :</p>
         <input
           type='text'
-          value={GuardianNumber.guardianName}
+          value={guardian.guardianName}
           onChange={(e) => onChange(e, "guardianName", index)}
-          id={`GuardianName-${GuardianNumber.id}`}
+          id={`GuardianName-${guardian.id}`}
           className='border-2 rounded-md px-2 py-1 border-gray-300'
-          placeholder={`Guardian ${GuardianNumber.id} Name`}
+          placeholder={`Guardian ${guardian.id} Name`}
         />
         {/* <p className='text-red-500 text-sm'>Error</p> */}
       </label>
-      <label
-        htmlFor={`GuardianNumber-${GuardianNumber.id}`}
-        className='flex flex-col '>
-        <p className='my-2'>{`Guardian ${GuardianNumber.id} Number`} :</p>
+      <label htmlFor={`guardian-${guardian.id}`} className='flex flex-col '>
+        <p className='my-2'>{`Guardian ${guardian.id} Number`} :</p>
         <input
           type='tel'
-          value={GuardianNumber.guardianMobileNumber}
+          value={guardian.guardianMobileNumber}
           onChange={(e) => onChange(e, "guardianMobileNumber", index)}
-          id={`GuardianNumber-${GuardianNumber.id}`}
+          id={`guardian-${guardian.id}`}
           className='border-2 rounded-md px-2 py-1 border-gray-300'
-          placeholder={`Guardian ${GuardianNumber.id} Number`}
+          placeholder={`Guardian ${guardian.id} Number`}
         />
         {/* <p className='text-red-500 text-sm'>Error</p> */}
       </label>
       <label
-        htmlFor={`GuardianEmail-${GuardianNumber.id}`}
+        htmlFor={`GuardianEmail-${guardian.id}`}
         className='flex flex-col '>
-        <p className='my-2'>{`Guardian ${GuardianNumber.id} Email Id`} :</p>
+        <p className='my-2'>{`Guardian ${guardian.id} Email Id`} :</p>
         <input
           type='email'
-          value={GuardianNumber.guardianEmailId}
+          value={guardian.guardianEmailId}
           onChange={(e) => onChange(e, "guardianEmailId", index)}
-          id={`GuardianEmail-${GuardianNumber.id}`}
+          id={`GuardianEmail-${guardian.id}`}
           className='border-2 rounded-md px-2 py-1 border-gray-300'
-          placeholder={`Guardian ${GuardianNumber.id} Email Id`}
+          placeholder={`Guardian ${guardian.id} Email Id`}
         />
         {/* <p className='text-red-500 text-sm'>Error</p> */}
       </label>
       <label
-        htmlFor={`GuardianAddress-${GuardianNumber.id}`}
+        htmlFor={`GuardianAddress-${guardian.id}`}
         className='flex flex-col '>
-        <p className='my-2'>{`Guardian ${GuardianNumber.id} Email Id`} :</p>
+        <p className='my-2'>{`Guardian ${guardian.id} address`} :</p>
         <input
           type='text'
-          value={GuardianNumber.guardianHomeAddress}
+          value={guardian.guardianHomeAddress}
           onChange={(e) => onChange(e, "guardianHomeAddress", index)}
-          id={`GuardianEmail-${GuardianNumber.id}`}
+          id={`GuardianEmail-${guardian.id}`}
           className='border-2 rounded-md px-2 py-1 border-gray-300'
-          placeholder={`Guardian ${GuardianNumber.id} Email Id`}
+          placeholder={`Guardian ${guardian.id} address `}
         />
         {/* <p className='text-red-500 text-sm'>Error</p> */}
       </label>
-      <label htmlFor={`GuardianRelationship-${GuardianNumber.id}`}>
-        {`Guardian ${GuardianNumber.id} Relationship`} :
+      <label htmlFor={`GuardianRelationship-${guardian.id}`}>
+        {`Guardian ${guardian.id} Relationship`} :
       </label>
 
-      <label htmlFor={`GuardianIsParent-${GuardianNumber.id}`}> Parent</label>
+      <label htmlFor={`GuardianIsParent-${guardian.id}`}> Parent</label>
       <div className='flex gap-3'>
         <label
-          htmlFor={`GuardianIsParentYes-${GuardianNumber.id}`}
+          htmlFor={`GuardianIsParentYes-${guardian.id}`}
           className='inline-flex items-center'>
           <input
             type='radio'
-            id={`GuardianIsParentYes-${GuardianNumber.id}`}
-            name={`GuardianIsParent-${GuardianNumber.id}`}
-            checked={GuardianNumber.isParent === "on"}
+            id={`GuardianIsParentYes-${guardian.id}`}
+            name={`GuardianIsParent-${guardian.id}`}
+            checked={guardian.isParent === "on"}
             onChange={(e) => onChange(e, "isParent", index)}
           />
           Yes
         </label>
         <label
-          htmlFor={`GuardianIsParentNo-${GuardianNumber.id}`}
+          htmlFor={`GuardianIsParentNo-${guardian.id}`}
           className='inline-flex items-center'>
           <input
             type='radio'
-            id={`GuardianIsParentNo-${GuardianNumber.id}`}
-            name={`GuardianIsParent-${GuardianNumber.id}`}
+            id={`GuardianIsParentNo-${guardian.id}`}
+            name={`GuardianIsParent-${guardian.id}`}
             value='no'
-            checked={GuardianNumber.isParent === "no"}
+            checked={guardian.isParent === "no"}
             onChange={(e) => onChange(e, "isParent", index)}
           />
           No
