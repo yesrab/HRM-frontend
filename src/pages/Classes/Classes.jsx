@@ -7,10 +7,11 @@ import fetchUtils from "../../libs/fetchUtils";
 
 // Loader function to fetch data
 export const loader = async () => {
-  const COUNT_URL = "/api/v1/classes/count";
+  const COUNT_URL = "/api/v1/class/count";
   const ALL_CLASSES = "/api/v1/classes/allClasses";
   const count = fetchUtils(COUNT_URL);
-  const classes = await fetchUtils(ALL_CLASSES);
+  // const classes = await fetchUtils(ALL_CLASSES);
+  let classes;
   return defer({ count, classes });
 };
 
@@ -18,7 +19,6 @@ const Classes = () => {
   const { count, classes } = useLoaderData();
   const [open, setOpen] = useState(false);
   const toggleModal = () => setOpen(!open);
-
   return (
     <div className='flex-grow p-2 bg-slate-200'>
       <Header headerName={"Classes"} />
@@ -39,7 +39,7 @@ const Classes = () => {
         <ModalWrapper toggleModal={toggleModal} open={open}>
           <div className='min-w-[50vw] min-h-[50vh] rounded-lg p-3'>
             <h1 className='text-2xl'>Add Class :</h1>
-            <AddClass toggleModal={toggleModal} />{" "}
+            <AddClass toggleModal={toggleModal} />
             {/* Implement this component */}
           </div>
         </ModalWrapper>
