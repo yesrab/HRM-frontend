@@ -1,12 +1,13 @@
 import React from "react";
 
-const FormInput = ({ labelName, placeholder, type, value, onChange }) => {
+const FormInput = ({ labelName, placeholder, type, value, onChange, name }) => {
   return (
-    <label htmlFor={labelName} className='flex flex-col '>
+    <label htmlFor={name} className='flex flex-col '>
       <p className='my-2'>{labelName} :</p>
       <input
         type={type}
-        id={labelName}
+        id={name}
+        name={name}
         className='border-2 rounded-md px-2 py-1 border-gray-300'
         placeholder={placeholder}
         value={value}

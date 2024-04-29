@@ -6,7 +6,10 @@ import {
 } from "react-router-dom";
 import Home, { loader as homeLoader } from "./pages/Home/Home";
 import DashLayout from "./pages/layout/DashLayout";
-import Classes, { loader as classLoader } from "./pages/Classes/Classes";
+import Classes, {
+  loader as classLoader,
+  action as classAction,
+} from "./pages/Classes/Classes";
 import Teachers, {
   loader as teacherLoader,
   action as teacherAction,
@@ -23,7 +26,12 @@ const router = createBrowserRouter(
     <Route>
       <Route element={<DashLayout />}>
         <Route loader={homeLoader} index element={<Home />} />
-        <Route path='/classes' loader={classLoader} element={<Classes />} />
+        <Route
+          path='/classes'
+          action={classAction}
+          loader={classLoader}
+          element={<Classes />}
+        />
         <Route
           path='/teachers'
           loader={teacherLoader}

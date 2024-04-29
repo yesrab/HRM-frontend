@@ -26,6 +26,7 @@ export const action = async ({ request, params }) => {
     });
   }
   const responce = await fetchUtils(serverRequest);
+  console.log(responce);
   return responce;
 };
 
@@ -36,7 +37,7 @@ const Teachers = () => {
   const toggleModal = () => {
     setOpen((prev) => !prev);
   };
-  console.log(teacher);
+
   return (
     <div className='flex-grow p-2 bg-slate-200'>
       <Header headerName={"Teachers"} />

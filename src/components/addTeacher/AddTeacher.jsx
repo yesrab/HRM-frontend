@@ -43,7 +43,6 @@ const AddTeacher = ({ toggleModal, responce }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle the form submission logic, e.g., sending data to a server
-    console.log("Submitting", teacher);
     submitter(teacher, {
       method: "POST",
       encType: "application/json",
